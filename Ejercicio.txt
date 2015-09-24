@@ -1,0 +1,22 @@
+En el ejercicio hay que consumir un json por REST (algo que ya está resuelto en un servicio).
+Lo que hay que hacer es:
+
+- Crear un nuevo controller
+- Inyectar el servicio al nuevo controller
+- Configurar la ruta para el controller
+- Crear una vista que responda a la ruta
+- Imprimir la lista de nombres de los usuarios
+
+El código base para el proyecto esta en este repo https://github.com/salaesp/angularTraining. Toda la documentación de como levantar el ambiente está en el readme del repositorio.
+
+
+TIP: Para hacer la llamada al servicio es necesario manejar una "promesa":
+
+servicio.getData().success(function(data){
+    //do something
+})
+
+Cualquier consulta o duda pueden escribirme a mi (lsala@summasolutions.net) o a José (jdominguez@summasolutions.net)
+
+
+Recuerden que la fecha de entrega es el 29/9

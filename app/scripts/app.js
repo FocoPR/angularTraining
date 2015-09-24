@@ -18,6 +18,10 @@
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
+  .when('/', {
+    templateUrl: 'views/users.html',
+    controller: 'UsersCtrl'
+  })
   .when('/about', {
     templateUrl: 'views/about.html',
     controller: 'AboutCtrl'
@@ -40,7 +44,15 @@
   ];
   $scope.nameService = testService.getTest();
   $scope.nameFactory = testFactory.getTest();
-}).service('testService', function(){
+}).controller('UsersCtrl', ['$scope', '$http', function($scope, $http){
+  $scope.getUsers = function() {
+    $http.get('/data/users.json')
+      .success( function(data){
+        $scope.users = data;
+      });
+  };
+  }
+]).service('testService', function(){
   this.getTest = function(){
     return { name: 'luis'}
   };
